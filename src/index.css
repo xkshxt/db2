@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "Red Hat Display", "Outfit", sans-serif;
+    --primary-color: #6A38C2;
+    --secondary-color: #FA4E09;
+    --neutral-color: #222222;
+    --background-color: #FFFFFF;
+}
+
+/* Define custom text color classes */
+.text-primary {
+    color: var(--primary-color); /* Use the primary color */
+  }
+  
+  .text-secondary {
+    color: var(--secondary-color); /* Use the secondary color */
+  }
+  
+  .text-neutral {
+    color: var(--neutral-color); /* Use the neutral color */
+  }
+
+  .text-background {
+    color: var(--background-color); /* Use the background color */
+  }

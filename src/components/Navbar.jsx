@@ -7,7 +7,7 @@ const Navbar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen);
     };
   return (
-    <nav className="sticky top-0 z-50 py-3">
+    <nav className="sticky top-0 z-50 py-3 bg-white">
         <div className="container px-16 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
             <div className="flex items-center flex-shrink-0 font-semibold">

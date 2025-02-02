@@ -16,15 +16,15 @@ const Navbar = () => {
             </div>
             <div className="flex items-center"> 
                 <div className="hidden lg:flex justify-center items-center space-x-6 text-xs"> 
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Jobs</a>
-                    <a href="#">Services</a>
-                    <a href="#">Contact Us</a>
+                    <a href="#" className="hover:font-semibold">Home</a>
+                    <a href="#" className="hover:font-semibold">About</a>
+                    <a href="#" className="hover:font-semibold">Jobs</a>
+                    <a href="#" className="hover:font-semibold">Services</a>
+                    <a href="#" className="hover:font-semibold">Contact Us</a>
                 </div>
                 <div className="hidden lg:flex justify-center items-center space-x-2 text-xs ml-3">
-                    <a href="#" className="py-1.5 px-4 border-purple-700 border rounded-md">Login</a>
-                    <a href="#" className="py-1.5 px-4 bg-purple-700 text-background border rounded-md">Register</a>
+                    <a href="#" className="py-2 px-4 border-purple-700 border rounded-md">Login</a>
+                    <a href="#" className="py-2 px-4 bg-purple-700 text-background border rounded-md">Register</a>
                 </div>
                 <div className="lg:hidden md:flex flex-col justify-end">
                     <button onClick={toggleNavbar}>

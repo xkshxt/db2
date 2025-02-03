@@ -1,13 +1,110 @@
 [
-    {
-      "id": "1",
-      "title": "Frontend Developer",
-      "companyName": "Tech Solutions",
-      "companyLogo": "/images/tech-solutions-logo.png",
-      "location": "New York, NY",
-      "salary": "$80,000 - $100,000",
-      "description": ["Develop new user-facing features", "Ensure the technical feasibility of UI/UX designs"],
-      "companyOverview": "Tech Solutions is a leading software company...",
-      "benefits": ["Health Insurance", "Flexible Hours", "Remote Work"]
-    }
-  ]
+  {
+    "id": "1",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Google",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/300/300221.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "2",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Facebook",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/5968/5968764.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "3",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Apple",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/731/731985.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "4",
+    "title": "Lead DevOps Engineer",
+    "companyName": "X",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/5969/5969020.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "5",
+    "title": "Lead DevOps Engineer",
+    "companyName": "WhatsApp",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/5968/5968841.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "6",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Photoshop",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/15452/15452341.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "7",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Microsoft",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/732/732221.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "8",
+    "title": "Lead DevOps Engineer",
+    "companyName": "OpenAI",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/11865/11865326.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "9",
+    "title": "Lead DevOps Engineer",
+    "companyName": "Samsung",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/5969/5969116.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  }
+]

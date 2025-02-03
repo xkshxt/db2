@@ -22,6 +22,8 @@
 
 .job-button:hover {
   background-color: #f0f0f0;
+  border-color: purple;
+  color: purple; 
 }
 
 .left-to-right {
@@ -40,4 +42,57 @@
 @keyframes scroll-right-to-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(100%); }
+}
+
+/* Floating Icons */
+.floating-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  animation: float 5s infinite ease-in-out alternate;
+  z-index: 0;
+}
+
+/* Positions */
+.icon-1 { top: 5%; left: 10%; }
+.icon-2 { top: 20%; left: 5%; }
+.icon-3 { top: 35%; left: 15%; }
+
+.icon-4 { top: 5%; right: 10%; }
+.icon-5 { top: 20%; right: 5%; }
+.icon-6 { top: 35%; right: 15%; }
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-20px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .floating-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .icon-1 { top: 10%; left: 5%; }
+  .icon-2 { top: 25%; left: 2%; }
+  .icon-3 { top: 40%; left: 10%; }
+
+  .icon-4 { top: 10%; right: 5%; }
+  .icon-5 { top: 25%; right: 2%; }
+  .icon-6 { top: 40%; right: 10%; }
+}
+
+@media (max-width: 426px) {
+  .left-to-right {
+    animation: scroll-left-to-right 5s linear infinite;
+  }
+
+  .right-to-left {
+    animation: scroll-right-to-left 5s linear infinite;
+  }
+
+ 
 }

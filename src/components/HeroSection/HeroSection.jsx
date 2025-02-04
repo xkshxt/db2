@@ -36,7 +36,7 @@ function HeroSection() {
         <br/>
         <div className="flex items-center justify-center space-x-4">
           <Link to="/jobs" className="px-6 py-3 bg-purple-600 text-white rounded-lg -mr-1">Browse Jobs</Link>
-          <Link to="/post-job" className="px-6 py-3 font-semibold flex items-center">
+          <Link to="/" className="px-6 py-3 font-semibold flex items-center">
             <img 
               src="https://cdn-icons-png.flaticon.com/128/7187/7187472.png" 
               alt="Info Icon" 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function LatestJobs() {
   const jobs = [
     {
@@ -76,7 +78,7 @@ function LatestJobs() {
             </p>
           </div>
           <div className="text-center md:text-right mt-4 md:mt-0">
-            <a href="#" className="text-purple-600 font-semibold">View All Jobs</a>
+            <Link to="/jobs" className="text-purple-600 font-semibold">View All Jobs</Link>
           </div>
         </div>
       </div>

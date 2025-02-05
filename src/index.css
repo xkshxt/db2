@@ -28,3 +28,14 @@
   .text-background {
     color: var(--background-color); /* Use the background color */
   }
+
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+.FilterSidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.FilterSidebar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

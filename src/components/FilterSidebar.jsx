@@ -4,10 +4,10 @@ import CollapsibleSection from './ExpandCollapse';
 function FilterSidebar({ isMobile, toggleSidebar }) {
   return (
     <aside
-      className={`${
+      className={`FilterSidebar ${
         isMobile
           ? 'fixed top-0 left-0 w-64 h-full bg-white z-50 overflow-y-auto p-6'
-          : 'w-58 mr-8'
+          : 'w-58 mr-8 h-screen overflow-y-auto'
       }`}
     >
       <div className="flex justify-between items-center mb-4">

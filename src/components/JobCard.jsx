@@ -2,10 +2,18 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function JobCard({ job }) {
+  // Limit the job description to 100 characters
+  const truncateText = (text, limit) => {
+    if (text.length > limit) {
+      return text.substring(0, limit) + "...";
+    }
+    return text;
+  };
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 relative">
       <div className="flex items-center mb-4">
-        <img src={job.companyLogo} alt={job.companyName} className="w-10 h-10 mr-5" />
+        <img src={job.companyLogo} alt={job.companyName} className="w-8 h-8 mr-5" />
         <div>
           <h3 className="text-lg font-extrabold">{job.companyName}</h3>
           <p className="text-sm text-gray-500">{job.location}</p>
@@ -17,13 +25,15 @@ function JobCard({ job }) {
         </button>
       </div>
       <h4 className="text-lg font-extrabold mb-2">{job.title}</h4>
-      <p className="text-sm text-gray-600 mb-4">{job.description[0]}</p>
-      <div className="flex gap-2 items-center mb-4">
-        <span className="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded">2 Positions</span>
+      <p className="text-sm text-gray-600 mb-4">
+        {truncateText(Array.isArray(job.description) ? job.description[0] : job.description, 100)}
+      </p>
+      <div className="flex gap-2 items-center mb-2 text-xs">
+        <span className="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded">{job.positions}</span>
         <span className="bg-orange-100 text-orange-600 font-bold px-2 py-1 rounded">Full Time</span>
         <span className="bg-green-100 text-green-600 font-bold px-2 py-1 rounded">2 Years</span>
       </div>
-      <div className="flex gap-2 items-center mb-4">
+      <div className="flex gap-2 items-center mb-4 text-xs">
         <span className="bg-green-100 text-green-300 font-bold px-2 py-1 rounded">{job.salary}</span>
         <span className="bg-red-100 text-red-600 font-bold px-2 py-1 rounded">WFO</span>
       </div>
@@ -44,7 +54,11 @@ JobCard.propTypes = {
     companyName: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    description: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string)
+    ]).isRequired,
+    positions: PropTypes.string.isRequired,
     salary: PropTypes.string.isRequired,
   }).isRequired,
 };

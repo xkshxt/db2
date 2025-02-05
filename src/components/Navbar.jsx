@@ -9,12 +9,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 bg-white">
+    <nav className="sticky top-0 z-50 py-3 bg-white shadow-md">
       <div className="container mx-auto px-4 sm:px-16 relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0 font-semibold">
-            <span className="text-xl tracking-tight text-primary">Job</span>
-            <span className="text-xl tracking-tight text-secondary">hunt</span>
+            <span className="text-2xl tracking-tight text-primary">Job</span>
+            <span className="text-2xl tracking-tight text-secondary">hunt</span>
           </div>
           <div className="flex items-center">
             <div className="hidden lg:flex justify-center items-center space-x-6 text-xs">

@@ -9,7 +9,14 @@
     "description": ["Your job role would be to do release management, tooling, and processes to ..."],
     "positions": "2 Positions",
     "jobType": "Full Time",
-    "experience": "2 Years"
+    "experience": "2 Years",
+    "companyOverview": "Google is a leading tech company...",
+    "benefits": ["Health Insurance", "Flexible Hours", "Remote Work"],
+    "reviews": [
+      "Friendly environment",
+      "Work from home facility",
+      "Good for freshers to learn"
+    ]
   },
   {
     "id": "2",
@@ -98,6 +105,18 @@
   {
     "id": "9",
     "title": "Lead DevOps Engineer",
+    "companyName": "Samsung",
+    "companyLogo": "https://cdn-icons-png.flaticon.com/128/5969/5969116.png",
+    "location": "USA",
+    "salary": "$95,000/Year",
+    "description": ["Your job role would be to do release management, tooling, and processes to ..."],
+    "positions": "2 Positions",
+    "jobType": "Full Time",
+    "experience": "2 Years"
+  },
+  {
+    "id": "10",
+    "title": "Software Dev Engineer",
     "companyName": "Samsung",
     "companyLogo": "https://cdn-icons-png.flaticon.com/128/5969/5969116.png",
     "location": "USA",

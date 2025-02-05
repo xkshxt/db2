@@ -85,6 +85,12 @@ function JobDetail() {
                   <li key={index}>{benefit}</li>
                 ))}
               </ul>
+              <h3 className="font-semibold mt-4">Reviews</h3>
+              <ul>
+                {job.reviews && job.reviews.map((review, index) => (
+                  <li key={index}>{review}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </aside>

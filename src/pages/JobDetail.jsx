@@ -5,6 +5,7 @@ function JobDetail() {
   const { id } = useParams();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("description");
 
   useEffect(() => {
     fetch("/data/jobs.json")
@@ -33,12 +34,31 @@ function JobDetail() {
     return <div className="text-center py-6">Job not found</div>;
   }
 
+  // Icon Mapping
+  const iconMapping = {
+    positive: "https://cdn-icons-png.flaticon.com/128/8681/8681116.png",
+    negative: "https://cdn-icons-png.flaticon.com/128/11144/11144602.png",
+  };
+
+  const positiveKeywords = ["friendly", "good", "work from home", "flexible"];
+  const negativeKeywords = ["terrible", "slow", "bad", "stressful"];
+
+  const getReviewIcon = (review) => {
+    const lowerCaseReview = review.toLowerCase();
+    if (positiveKeywords.some((keyword) => lowerCaseReview.includes(keyword))) {
+      return iconMapping.positive;
+    } else if (
+      negativeKeywords.some((keyword) => lowerCaseReview.includes(keyword))
+    ) {
+      return iconMapping.negative;
+    }
+    return null;
+  };
+
   return (
-    <div className="container mx-auto px-4 md:px-12 py-12">
+    <div className="container mx-auto px-4 md:px-8 py-12">
       <div className="flex flex-col md:flex-row">
-        {/* Left Section: Job Details */}
-        <div className="md:w-2/3 w-full">
-          {/* Job Title & Apply Button */}
+        <div className="md:w-[70%] w-full">
           <div className="flex flex-col lg:flex-row items-center lg:justify-between w-full mb-6">
             <div className="flex items-center">
               {job.companyLogo && (
@@ -70,72 +90,164 @@ function JobDetail() {
               </div>
             </div>
 
-            {/* Apply Now Button (stays in line on lg screens) */}
-            <div className="mt-4 lg:mt-0">
+            <div className="mt-4 lg:mt-0 xl:mr-12">
               <button className="px-4 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition">
                 Apply Now
               </button>
             </div>
           </div>
 
-          {/* Job Details Tabs */}
           <div className="mt-8 border-b">
             <ul className="flex justify-center sm:justify-start space-x-6">
               <li>
-                <a href="#description" className="text-purple-600 font-medium">
+                <button
+                  onClick={() => setActiveTab("description")}
+                  className={`font-bold px-3 py-2 ${
+                    activeTab === "description"
+                      ? "text-black border-b-2 border-purple-500"
+                      : "text-gray-600 hover:text-purple-500"
+                  }`}
+                >
                   Job Description
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#education" className="text-gray-600 font-medium">
+                <button
+                  onClick={() => setActiveTab("education")}
+                  className={`font-bold px-3 py-2 ${
+                    activeTab === "education"
+                      ? "text-black border-b-2 border-purple-500"
+                      : "text-gray-600 hover:text-purple-500"
+                  }`}
+                >
                   Education
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#applicants" className="text-gray-600 font-medium">
+                <button
+                  onClick={() => setActiveTab("totalApplicants")}
+                  className={`font-bold px-3 py-2 ${
+                    activeTab === "totalApplicants"
+                      ? "text-black border-b-2 border-purple-500"
+                      : "text-gray-600 hover:text-purple-500"
+                  }`}
+                >
                   Total Applicants
-                </a>
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Job Description Content */}
-          <div id="description" className="mt-4 space-y-2">
-            {job.description &&
-              job.description.map((point, index) => (
-                <p key={index} className="break-words">
-                  {point}
-                </p>
-              ))}
+          <div className="mt-4 space-y-2">
+            {activeTab === "description" && job.description && (
+              <div>
+                {job.description.map((point, index) => (
+                  <p key={index} className="break-words">
+                    {point}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {activeTab === "education" && job.education && (
+              <div>
+                {job.education.map((degree, index) => (
+                  <p key={index} className="break-words">
+                    {degree}
+                  </p>
+                ))}
+              </div>
+            )}
+            {activeTab === "totalApplicants" && job.totalApplicants && (
+              <div>
+                {job.totalApplicants.map((degree, index) => (
+                  <p key={index} className="break-words">
+                    {degree}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
+        {/* right hand side section */}
+        <div className="md:w-[30%] w-full mt-8 md:mt-0 md:ml-8">
+          <h2 className="text-xl font-bold mb-2">Company Overview</h2>
+          <p className="break-words text-gray-700">{job.companyOverview}</p>
 
-        {/* Right Section: Company Overview */}
-        <div className="md:w-1/3 w-full mt-8 md:mt-0 md:ml-8">
-          <div className="p-4 ">
-            <h2 className="text-xl font-bold mb-2">Company Overview</h2>
-            <p className="break-words">{job.companyOverview}</p>
+          {/* Insights & Perks Section */}
+          <div className="mt-6">
+            <div className="flex space-x-8 ml-2">
+              {job.insights &&
+                job.insights.map((insight, index) => {
+                  const iconMapping = {
+                    "10,000+ employees":
+                      "https://cdn-icons-png.flaticon.com/128/3001/3001785.png",
+                    "New york, NY":
+                      "https://cdn-icons-png.flaticon.com/128/149/149060.png",
+                  };
 
-            {/* Reviews */}
-            <div className="mt-4">
-              <h3 className="font-semibold">Reviews</h3>
-              <ul className="list-disc list-inside space-y-1">
-                {job.reviews &&
-                  job.reviews.map((review, index) => (
-                    <li key={index}>{review}</li>
-                  ))}
-              </ul>
+                  return (
+                    <div key={index} className="flex items-center space-x-3">
+                      <img
+                        src={iconMapping[insight]}
+                        alt={insight}
+                        className="h-6 w-6"
+                      />
+                      <span className="text-gray-700">{insight}</span>
+                    </div>
+                  );
+                })}
             </div>
+          </div>
 
-            {/* Benefits & Perks */}
-            <div className="mt-4">
-              <h3 className="font-semibold">Benefits & Perks</h3>
-              <ul className="list-disc list-inside space-y-1">
-                {job.benefits &&
-                  job.benefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
-                  ))}
-              </ul>
+          {/* Reviews Section with Icons */}
+          <div className="mt-4">
+            <h3 className="font-bold mb-3">Reviews</h3>
+            <ul className="list-disc list-inside space-y-3">
+              {job.reviews &&
+                job.reviews.map((review, index) => (
+                  <li key={index} className="flex items-center space-x-5">
+                    {getReviewIcon(review) && (
+                      <img
+                        src={getReviewIcon(review)}
+                        alt="Review Icon"
+                        className="h-5 w-5"
+                      />
+                    )}
+                    <span className="text-gray-700">{review}</span>
+                  </li>
+                ))}
+            </ul>
+          </div>
+
+          {/* Benefits & Perks Section */}
+          <div className="mt-6">
+            <h3 className="text-lg font-bold mb-4">Benefits & Perks</h3>
+            <div className="flex space-x-12 mt-7">
+              {job.benefits &&
+                job.benefits.map((benefit, index) => {
+                  const iconMapping = {
+                    Cafeteria:
+                      "https://cdn-icons-png.flaticon.com/128/9036/9036423.png",
+                    WFH: "https://cdn-icons-png.flaticon.com/128/5024/5024833.png",
+                    Transportation:
+                      "https://cdn-icons-png.flaticon.com/128/5624/5624759.png",
+                  };
+
+                  return (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center space-y-2"
+                    >
+                      <img
+                        src={iconMapping[benefit]}
+                        alt={benefit}
+                        className="h-10 w-10"
+                      />
+                      <span className="text-gray-700">{benefit}</span>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>

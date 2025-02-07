@@ -50,9 +50,9 @@ const Navbar = () => {
             <nav className="flex flex-col space-y-4">
               <a href="#" className="text-lg">Home</a>
               <a href="#" className="text-lg">About</a>
-              <a href="#" className="text-lg">Jobs</a>
+              <a href="/Jobs" className="text-lg">Jobs</a>
               <a href="#" className="text-lg">Services</a>
-              <a href="#" onClick={scrollToBottom} className="text-lg cursor-pointer">Contact Us</a> {/* Added onClick and cursor-pointer */}
+              <a href="#" onClick={scrollToBottom} className="text-lg cursor-pointer">Contact Us</a>
             </nav>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="py-2 px-4 border border-purple-700 rounded-md">Login</a>

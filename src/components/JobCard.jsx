@@ -30,12 +30,12 @@ function JobCard({ job }) {
       </p>
       <div className="flex gap-2 items-center mb-2 text-xs">
         <span className="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded">{job.positions}</span>
-        <span className="bg-orange-100 text-orange-600 font-bold px-2 py-1 rounded">Full Time</span>
-        <span className="bg-green-100 text-green-600 font-bold px-2 py-1 rounded">2 Years</span>
+        <span className="bg-orange-100 text-orange-600 font-bold px-2 py-1 rounded">{job.type}</span>
+        <span className="bg-green-100 text-green-600 font-bold px-2 py-1 rounded">{job.experience}</span>
       </div>
       <div className="flex gap-2 items-center mb-4 text-xs">
         <span className="bg-green-100 text-green-300 font-bold px-2 py-1 rounded">{job.salary}</span>
-        <span className="bg-red-100 text-red-600 font-bold px-2 py-1 rounded">WFO</span>
+        <span className="bg-red-100 text-red-600 font-bold px-2 py-1 rounded">{job.mode}</span>
       </div>
       <div className="flex gap-2">
         <button className="bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Apply Now</button>
@@ -58,7 +58,10 @@ JobCard.propTypes = {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string)
     ]).isRequired,
+    type: PropTypes.string.isRequired,
+    experience: PropTypes.string.isRequired,
     positions: PropTypes.string.isRequired,
+    mode: PropTypes.string.isRequired,
     salary: PropTypes.string.isRequired,
   }).isRequired,
 };

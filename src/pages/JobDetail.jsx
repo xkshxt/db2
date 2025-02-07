@@ -75,13 +75,13 @@ function JobDetail() {
                     {job.positions}
                   </span>
                   <span className="bg-orange-100 text-orange-600 font-bold px-3 py-1 rounded">
-                    {job.jobType}
+                    {job.type}
                   </span>
                   <span className="bg-green-100 text-green-600 font-bold px-3 py-1 rounded">
                     {job.salary}
                   </span>
                   <span className="bg-red-100 text-red-600 font-bold px-3 py-1 rounded">
-                    WFO
+                    {job.mode}
                   </span>
                   <span className="bg-green-100 text-green-600 font-bold px-3 py-1 rounded">
                     {job.experience}

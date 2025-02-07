@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import VideoModal from './VideoModal';
 import './HeroSection.css';
 
 function HeroSection() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const jobProfiles = [
     "Full Stack Developer", "Back-end Developer", "Graphic Designer",
     "Senior Accountant", "UI Designer", "Employer Branding Associate",
@@ -29,21 +34,24 @@ function HeroSection() {
           />
           No. 1 Job hunt website.
         </p>
-        <h1 className="text-5xl font-extrabold">Search,Apply & <br/> Get Your
+        <h1 className="text-4xl md:text-5xl font-extrabold">Search,Apply & <br/> Get Your
           <span className='text-primary'> Dream Job</span></h1>
         <br/>
         <p className="text-sm text-gray-500">Start your hunt for the best, life-changing career opportunities from here in your <br/> selected areas conveniently and get hired quickly.</p>
         <br/>
         <div className="flex items-center justify-center space-x-4">
           <Link to="/jobs" className="px-6 py-3 bg-purple-600 text-white rounded-lg -mr-1">Browse Jobs</Link>
-          <Link to="/" className="px-6 py-3 font-semibold flex items-center">
-            <img 
-              src="https://cdn-icons-png.flaticon.com/128/7187/7187472.png" 
-              alt="Info Icon" 
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-6 py-3 font-semibold flex items-center focus:outline-none"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/7187/7187472.png"
+              alt="Info Icon"
               className="w-8 h-8 mr-2"
             />
             How it works?
-          </Link>
+          </button>
         </div>
         <br/>
         <br/>
@@ -64,6 +72,8 @@ function HeroSection() {
         {floatingIcons.map((icon, index) => (
           <img key={index} src={icon.src} alt={icon.alt} className={icon.className} />
         ))}
+        {/* Video Modal */}
+        <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </section>
   );

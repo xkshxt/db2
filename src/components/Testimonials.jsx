@@ -12,7 +12,7 @@ function Testimonials() {
     return (
       <section className="py-10">
         <div className="container mx-auto px-4 text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Testimonials</h2>
           <p className="text-lg text-gray-600">
             Now, let’s know what our career aspirants have to say about our evolving community <br/> and career finding services.
           </p>

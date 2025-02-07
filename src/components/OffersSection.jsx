@@ -23,7 +23,7 @@ function OffersSection() {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">What We Offer</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">What We Offer</h2>
         <p className="text-sm text-gray-500">
           Job Portal is the right platform for you to get various job recommendations, get career <br/> counseling, and find your ideal job profile.
         </p>

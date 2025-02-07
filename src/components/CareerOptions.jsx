@@ -13,7 +13,7 @@ function CareerOptions() {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 text-center mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
           <span className="text-purple-600">Countless Career Options</span> Are Waiting <br/> For You To Explore
         </h2>
       </div>

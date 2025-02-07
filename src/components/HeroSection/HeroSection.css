@@ -96,3 +96,21 @@
 
  
 }
+
+/* Ensure the video fills the modal */
+.video-modal video {
+  width: 100%;
+  height: auto;
+}
+
+/* Style adjustments for the close button */
+.video-modal .close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}

@@ -25,7 +25,7 @@ function StepsSection() {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 text-center mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">Get Hired in <span className="text-purple-600">4 Quick Easy Steps</span></h2>
+        <h2 className=" text-3xl md:text-4xl font-extrabold mb-4">Get Hired in <span className="text-purple-600">4 Quick Easy Steps</span></h2>
         <p className="text-sm text-gray-500">The quickest and most effective way to get hired by the top firm working in your <br/> career interest areas.</p>
       </div>
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">

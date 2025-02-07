@@ -3,7 +3,7 @@ function Newsletter() {
       <section className="mt-20 py-10 bg-gray-700 w-2/3 mx-auto text-white rounded-lg">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between lg:ml-10">
           <div className="mb-8 md:mb-0 md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4">Get Latest Job Updates</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Latest Job Updates</h2>
             <p className="text-lg mb-4">
               Eagerly searching for a job in your interest area? Sign up for the email update to know the latest openings that come under your purview.
             </p>

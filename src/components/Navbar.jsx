@@ -8,6 +8,13 @@ const Navbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
 
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth', // Optional: for smooth scrolling
+    });
+  };
+
   return (
     <nav className="sticky top-0 z-50 py-3 bg-white shadow-md">
       <div className="container mx-auto px-4 sm:px-16 relative text-sm">
@@ -18,11 +25,11 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             <div className="hidden lg:flex justify-center items-center space-x-6 text-xs">
-              <a href="#" className="hover:font-semibold">Home</a>
+              <a href="/" className="hover:font-semibold">Home</a>
               <a href="#" className="hover:font-semibold">About</a>
-              <a href="#" className="hover:font-semibold">Jobs</a>
+              <a href="/Jobs" className="hover:font-semibold">Jobs</a>
               <a href="#" className="hover:font-semibold">Services</a>
-              <a href="#" className="hover:font-semibold">Contact Us</a>
+              <a href="#" onClick={scrollToBottom} className="hover:font-semibold">Contact Us</a>
             </div>
             <div className="hidden lg:flex justify-center items-center space-x-2 text-xs ml-3">
               <a href="#" className="py-2 px-4 border border-purple-700 rounded-md">Login</a>
@@ -45,7 +52,7 @@ const Navbar = () => {
               <a href="#" className="text-lg">About</a>
               <a href="#" className="text-lg">Jobs</a>
               <a href="#" className="text-lg">Services</a>
-              <a href="#" className="text-lg">Contact Us</a>
+              <a href="#" onClick={scrollToBottom} className="text-lg cursor-pointer">Contact Us</a> {/* Added onClick and cursor-pointer */}
             </nav>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="py-2 px-4 border border-purple-700 rounded-md">Login</a>
